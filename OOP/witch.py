@@ -13,6 +13,15 @@ class WW:
     def __str__(self):
         return f"{self.name} from {self.house}\n{self.name}'s spell is {self.spell}"
     
+    @classmethod
+    def get_ww(cls):
+        name = input("WW's name? ")
+        house = input("WW's house? ")
+        spell = input("WW's spell? ")
+        if (not house):
+            return cls(name=name, spell=spell)
+        return cls(name, house, spell)
+        
     #getter
     @property
     def house(self):
@@ -43,19 +52,14 @@ class WW:
                 print("🛩")
             case _:
                 print("🧮")
+    
         
 def main():
-    ww = get_ww()
+    ww = WW.get_ww()
     ww.charm()
     print(ww.name)
     print(ww.house)
 
-def get_ww():
-    name = input("WW's name? ")
-    house = input("WW's house? ")
-    spell = input("WW's spell? ")
-    if (not house):
-        return WW(name=name, spell=spell)
-    return WW(name, house, spell)
+
 if __name__ == "__main__":
     main()
