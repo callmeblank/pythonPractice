@@ -12,9 +12,12 @@ class WW:
             raise ValueError("Invalid house")
         self.name = name
         self.house = house
+    def __str__(self):
+        return f"{self.name} from {self.house}"
+        
 def main():
     ww = get_ww()
-    print(f"Name == {ww.name}\nHouse == {ww.house}")
+    print(ww)
 
 def get_ww():
     name = input("WW's name? ")
