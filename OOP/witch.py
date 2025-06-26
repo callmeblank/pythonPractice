@@ -23,9 +23,11 @@ class WW:
             case "Stag":
                 print("🌵")
             case "Otter":
-                print("📷 ")
+                print("📷")
             case "Jacole":
-                print("🛩 ")
+                print("🛩")
+            case _:
+                print("🧮")
         
 def main():
     ww = get_ww()
